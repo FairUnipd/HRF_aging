@@ -5,6 +5,9 @@ close all
 load node_lab_conc.mat
 load group_scatter.mat
 
+%load correlation with all dataset
+load CORRg.mat
+
 labels_hrf=[{'A_peak'},{'A_trough'},{'t_peak'},{'t_trough'},{'Rise_slope'},{'Fall_slope'},{'AUC'},{'FWHM'},{'Peak_to_trough'}];
 labels_hrf_plot=[{'A peak'},{'A trough'},{'t peak'},{'t trough'},{'Rise slope'},{'Fall slope'},...
     {'AUC'},{'FWHM'},{'Peak to trough'}];
@@ -146,8 +149,8 @@ for ii=0:length(node_labels_S)-1
 end
 
 figure
-%select top 11 features
-for jj=1:11
+%select top 10 features
+for jj=1:10
     
     Covariate_name=CovNames_struct(idx_ordered(jj)).Cov;
     Covariate_ROI=CovNames_struct(idx_ordered(jj)).ROI;
